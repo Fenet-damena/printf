@@ -15,7 +15,7 @@ C library while maintaining a similar coding style.
 
 ## Introduction
 
-The `_custom_printf` function is designed to mimic the behavior of the standard `printf`
+The `_printf` function is designed to mimic the behavior of the standard `printf`
 function in C. It accepts a format string and a variable number of arguments and prints
 formatted output to the standard output (usually the terminal).
 
@@ -31,12 +31,12 @@ int main() {
     int num = 42;
     char *str = "Hello, world!";
     
-    _custom_printf("Number: %d\nString: %s\n", num, str);
+    _printf("Number: %d\nString: %s\n", num, str);
     
     return 0;
 }
 
-Make sure to compile your program with the custom_printf.c file to link to the custom
+Make sure to compile your program with the _printf.c file to link to the custom
 printf implementation.
 
 ## Functionality
