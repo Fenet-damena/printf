@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef MAIN_H_
+#define MAIN_H_
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -15,4 +15,4 @@ int output_float(float n);
 int output_binary(unsigned long int n);
 size_t process_specifiers(const char *format, va_list list);
 
-
+#endif
