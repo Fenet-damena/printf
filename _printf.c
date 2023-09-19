@@ -9,7 +9,7 @@ void outputBuffer(char buffer[], int *buffIndex);
  * @format: Format string.
  * Return: Number of characters printed.
  */
-int _printf(const char *format, ...)
+int _printf(const char *format, ...);
 {
     int i, totalPrinted = 0, printedChars = 0;
     int flags = 0, width = 0, precision = 0, size = 0, buffIndex = 0;
