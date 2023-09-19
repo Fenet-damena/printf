@@ -21,7 +21,7 @@ formatted output to the standard output (usually the terminal).
 
 ## Usage
 
-To use the `_custom_printf` function in your C program, include the `main.h` header file
+To use the `_printf` function in your C program, include the `main.h` header file
 and call the function like this:
 
 ```c
