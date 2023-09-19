@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdarg.h>
+#include <stdio.h>
 
 void outputBuffer(char buffer[], int *buffIndex);
 
