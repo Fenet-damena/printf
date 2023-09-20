@@ -1,55 +1,60 @@
 #include "main.h"
-<<<<<<< HEAD
-#include <unistd.h>
+#include <stdarg.h>
+#include <stdlib.h>
 
 
 /**
- * _putchar - writes the character c to stdout
- * @c: the character to print
- *
- * Return: on success 1
- * On error, -1 is returned, and errno is set appropriately
- */
-
-int _putchar(char c)
+ 
+_printf - prints out the parameters given to it*
+@format: format of character given to it
+Return: number of elements given to it
+*/
+int _printf(const char format, ...)
 {
-	return (write(1, &c, 1));
-=======
+    va_list arr;
+    int i, j, count;
+    chars;
+    char a;
 
-/**
- * _printf - display output to stdout.
- * @format_str: character string.
- * 
- * Return: number of characters printed
- * 
- */
-
-int _printf(const char *format_str, ...)
-{
-    size_t char_count = 0;
-    va_list args_list;
-
-    if (format_str != NULL)
+    count = 0;
+    va_start(arr, format);
+    if (format != NULL)
     {
-        va_start(args_list, format_str);
-
-        for (; *format_str; format_str++)
+        i = 0;
+        while (format[i] != '\0')
         {
-            if (*format_str != '%')
-                char_count += write(1, format_str, 1);
-            else if (*format_str == '%' && *(format_str - 1) == 92)
-                char_count += _putchar('%');
+            count++;
+            if (format[i] =='%' && format[i + 1] == '%')
+            {
+                count--;
+                _putchar('%');
+    @@ -42,29 +40,33 @@ int _printf(const char format, ...)
+                        break;
+                    case 's':
+                        s = va_arg(arr, char);
+                        for (j = 0; s[j] != '\0'; j++)
+                            _putchar(s[j]);
+                        break;
+                    case 'd':
+                        print_num(va_arg(arr, int));
+                        break;
+                    default:
+                        _putchar(format[i]);
+                        i++;
+                        continue;
+                }
+            }
             else
             {
-                format_str++;
-                char_count += process_specifiers(format_str, args_list);
+                _putchar(format[i]);
+
             }
+            i++;
         }
-        
-        va_end(args_list);
-        return char_count;
     }
-    else
-        return (0);
->>>>>>> 7061600a10a7500bbb58bb3991af2bdf8450032a
+
+    va_end(arr);
+
+
+    return (count);
 }
